@@ -203,7 +203,7 @@
                         if (isDebugEnv) {
                             alert("onValidateMerchant: " + JSON.stringify(event), validationUrl);
                         }
-
+                        console.log("validationUrl: " + validationUrl)
                         ckApplePay.getSession(validationUrl)
                             .then(function (response) {
                                 try {
@@ -236,6 +236,8 @@
                         // if (isDebugEnv) {
                         //     alert("onPaymentAuthorize: "+JSON.stringify(token));
                         // }
+
+                        console.log("paymentResponse: " + paymentResponse)
 
                         ckApplePay.authorize(paymentResponse.token)
                             .then(function (response) {
